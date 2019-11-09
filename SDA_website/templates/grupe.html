@@ -1,0 +1,46 @@
+<DOCTYPE! html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% if title %}
+<title> {{ title }}</title>
+{% else %} 
+<title> Structuri de Date & Alg </title>
+{% endif %}
+<link rel="stylesheet" type="text/css" 
+		href="{{ url_for('static',filename = 'CSS/mystyle.css') }}">
+
+</head>
+
+<body>
+
+<div class="header">
+	<header>
+		<h1>Structuri Date & Algoritmi</h1>
+	</header>
+</div>
+
+<center>
+	<div class = "container">
+		<div class="groupe-box">
+			<a href = "/211">
+				<div class="groupe">
+					Grupa 211
+				</div>
+			</a>
+			<a href = "/212">
+				<div class="groupe">
+					Grupa 212
+				</div>
+			</a>
+		</div>
+	</div>
+</center>
+
+
+</body>
+
+</html>
+

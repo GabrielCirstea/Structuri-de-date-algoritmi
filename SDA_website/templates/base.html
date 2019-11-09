@@ -1,0 +1,50 @@
+<DOCTYPE! html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% if title %}
+<title> {{ title }}</title>
+{% else %} 
+<title> Structuri de Date & Alg </title>
+{% endif %}
+<link rel="stylesheet" type="text/css" 
+		href="{{ url_for('static',filename = 'CSS/mystyle.css') }}">
+
+</head>
+
+<body>
+
+<div class="header">
+	<header>
+		<h1>Structuri Date & Algoritmi</h1>
+		<br>
+		<b>Grupa {{ grupa }}</b>
+	</header>
+</div>
+
+<div class = "nav">
+	<a href="/{{ grupa }}">Home</a>
+	
+	<div class = "dropdown">
+		Variante
+		<div class="dropdown-content">
+		{%for i in range(1,101) %}
+			<a href = "/{{ grupa }}/{{i}}">Var {{ i }}</a>
+			/
+			<a href = "/{{ grupa }}/{{i}}/sol">Sol {{i}}</a>
+		{% endfor %}
+		</div>
+	</div>
+	
+	<a href="/{{ grupa }}/random">Random</a>	
+</div>
+
+	<div class = "container">
+        {% block content %}{% endblock %}
+	</div>
+	
+</body>
+
+</html>

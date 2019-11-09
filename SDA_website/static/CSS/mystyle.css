@@ -1,0 +1,144 @@
+body{
+	text-align: left;
+	font-family: "Times New Roman", Times, serif;
+	background-color: gray;
+	background-image:
+		linear-gradient(
+		  140deg, #f0f0f5,  #ffffff
+		);
+}
+
+pre {
+   display: inline;
+  font-family: "Times New Roman", Times, serif;
+  white-space: 0;
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+  line-height: 70%;
+} 
+
+div.header{
+	width: 100%;
+	min-height:100px;
+	border: 1px solid black;
+	background-color:gray;
+	background-image:
+		linear-gradient(
+		  45deg, #666699, #b3b3e6
+		);
+	//background-image: url(" {{ url_for('static',filename='pycharm.png') }} ");
+}
+header{
+	text-align:center;
+	color: black;
+	padding: 5px;
+	
+}
+
+div.nav{
+	
+	padding: 14px 16px;
+	text-align:center;
+	border-bottom: 1px solid black;
+}
+
+div.nav a{
+	text-decoration:none;
+	border-radius: 10px;
+	padding: 14px 16px;
+	color: black;
+}
+
+div.nav a:hover {
+	//background-color: #333;
+	background-color:gray;
+	background-image:
+		linear-gradient(
+		  45deg, #666699, #b3b3e6
+		);
+	color: white;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  max-height: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 14px 16px;
+  z-index: 1;
+  overflow: auto;
+  /*copii nu faceti asta acasa */
+  left: -100%;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content:hover a{
+  text-decoration: none;
+  padding: 14px, 16px;
+}
+
+/* pt continut */
+div.container{
+	max-width: 900px;
+	min-height:500px;
+	border: 1px solid black;
+	border-radius: 20px;
+	margin: 10 auto;
+	padding: 10px;
+}
+
+/* inca nefolosita */
+div.categori{
+	width: 15%;
+	height: 100%;
+	float: left;
+	background-color: rgb(60,60,60);
+	
+}
+
+div.groupe-box{
+	height: 200px;
+	width: 100%;
+	display: block;
+	float: left;
+	padding: 10px;
+	/* border: 1px solid black; */
+	margin: 10 auto;
+}
+div.groupe{
+	min-height: 100px;
+	max-height: 200px;
+	width: 40%;
+	display: block;
+	float: left;
+	border: 1px solid black;
+	border-radius: 20px;
+	padding: 20px;
+	margin: 20px;
+	background-color:gray;
+	background-image:
+		linear-gradient(
+		  45deg, #666699, #b3b3e6
+		);
+}
+a div.groupe{
+	text-decoration: none;
+	color: black;
+	font-size: 30px;
+}
+div.groupe:hover{
+	background-color:gray;
+	background-image:
+		linear-gradient(
+		  90deg, #666699, #b3b3e6
+		);
+}

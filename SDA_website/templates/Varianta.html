@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{%block content %}
+	<center>
+		<h3> Ai ales numerul {{ number }} </h3>
+		<!--a href = "/{{ number }}/sol">Solutie</a-->
+	</center>
+		<!--h4> <a href = "{{number}}/sol">Hai savezi si solutia</a> </h4-->
+		{% for line in content %}
+			{{ line|safe }}<br>
+		{% endfor %}
+{% endblock %}

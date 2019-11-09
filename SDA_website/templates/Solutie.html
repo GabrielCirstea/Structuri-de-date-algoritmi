@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{%block content %}
+	<center>
+		<h3> Ai ales solutia numarului {{ number }} </h3>
+	</center>
+		{% for line in content %}
+			{{ line | safe}}<br>
+		{% endfor %}
+{% endblock %}

@@ -1,4 +1,7 @@
-/SDA_website/static/variante
-/SDA_website/static/solutii
+/SDA_website/static/variante/Lab211/
+/SDA_website/static/variante/Lab212/
+/SDA_website/static/solutii/Lab211/
+/SDA_website/static/solutii/Lab212/
 /SDA_website/Lab211
 /SDA_website/Lab212
+SDA_website/__pycache__/

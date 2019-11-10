@@ -1,0 +1,20 @@
+<pre>
+1. Problema 1 nu este rezolvata. Datele de intrare: Date
+</pre>
+<pre>
+2. Problema 2 nu este rezolvata. Datele de intrare: Date
+</pre>
+<pre>
+0'. Parcurgem sirul si folosim o variablia pentru a retine maximul curent.
+Presupunem ca primul element este maximul.
+La fiecare pas verificam daca elementul curent e mai mare si modificam variabila.
+	Elementul curent este: 67 
+	Elementul curent este: 91 ==> Elementul este mai mare decat maximul (67) -> maximul devine 91.
+	Elementul curent este: 89 
+	Elementul curent este: 29 
+	Elementul curent este: 12 
+Elementul maxim este: 91.
+</pre>
+<pre>
+0. Numerele sortate: [6, 10, 13, 56, 63, 75, 96]
+</pre>

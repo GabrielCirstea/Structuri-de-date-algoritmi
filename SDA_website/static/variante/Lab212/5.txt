@@ -1,0 +1,12 @@
+<pre>
+1. Textul problemei 1
+</pre>
+<pre>
+2. Textul problemei 2
+</pre>
+<pre>
+0'. Se primesc numerele: 37, 87, 5, 85, 32, 80. Gasiti elementul maxim.
+</pre>
+<pre>
+0. Se primesc numerele: 10, 31, 47, 78, 93, 98. Sortati numerele folosind metoda bulelor.
+</pre>

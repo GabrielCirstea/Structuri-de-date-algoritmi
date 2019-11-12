@@ -9,14 +9,28 @@ body{
 }
 
 pre {
-   display: inline;
+   /* display: inline; */
   font-family: "Times New Roman", Times, serif;
-  white-space: 0;
+  /* white-space: 0; */
   text-align: left;
   margin: 0px;
   padding: 0px;
   line-height: 70%;
+  white-space: pre-wrap;
+  word-break: keep-all;
+  /* border: 1px solid black; */
+  min-height: 100px;
+  height: 100px;
+  border-radius: 20px;
+  overflow: hidden;
 } 
+pre:hover{
+	border: 1px solid black;
+	/* background-image: */
+		/* linear-gradient( */
+		  /* 0deg, #f2e6ff, #ffffff */
+		/* ); */
+}
 
 div.header{
 	width: 100%;
@@ -71,7 +85,7 @@ div.nav a:hover {
   min-width: 200px;
   max-height: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 14px 16px;
+  /* padding: 14px 16px; */
   z-index: 1;
   overflow: auto;
   /*copii nu faceti asta acasa */
@@ -83,7 +97,7 @@ div.nav a:hover {
 }
 .dropdown-content:hover a{
   text-decoration: none;
-  padding: 14px, 16px;
+  /* padding: 14px, 16px; */
 }
 
 /* pt continut */

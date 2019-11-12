@@ -1,20 +1,51 @@
-<pre>
-1. Problema 1 nu este rezolvata. Datele de intrare: Date
-</pre>
-<pre>
-2. Problema 2 nu este rezolvata. Datele de intrare: Date
-</pre>
-<pre>
-0'. Parcurgem sirul si folosim o variablia pentru a retine maximul curent.
-Presupunem ca primul element este maximul.
-La fiecare pas verificam daca elementul curent e mai mare si modificam variabila.
-	Elementul curent este: 0 
-	Elementul curent este: 14 ==> Elementul este mai mare decat maximul (0) -> maximul devine 14.
-	Elementul curent este: 24 ==> Elementul este mai mare decat maximul (14) -> maximul devine 24.
-	Elementul curent este: 50 ==> Elementul este mai mare decat maximul (24) -> maximul devine 50.
-	Elementul curent este: 95 ==> Elementul este mai mare decat maximul (50) -> maximul devine 95.
-Elementul maxim este: 95.
-</pre>
-<pre>
-0. Numerele sortate: [9, 17, 22, 37, 42, 47, 51, 64, 99]
-</pre>
+<pre id="0" onclick="afisare(0)">
+Problem1
+1. Problema 1 nu este rezolvata. Datele de intrare: Date</pre><pre id="1" onclick="afisare(1)">
+Problem11
+O partitionare a vectorului este:
+[21, 7, 30, 12, 64, 40, 57, 93, 33, 94]
+
+
+Pivotul este : 94
+Vrem ca pivotul sa se afle pe ultima pozitie in sir
+Daca nu se afla pe ultima pozitie atunci il interschimbam cu elementul aflat pe pozitia respectiva
+Dupa interschimbarea pivotului sirul devine : [21, 7, 30, 12, 64, 40, 57, 93, 33, 94]
+
+Vom calcula pozitia unde trebuie sa stea pivotul,crescand indicele si efectuand interschimbari a.i. elementele mai mici sau egale sa fie in stanga sa.
+La sfarsit pivotul va fi mutat pe pozitia corespunzatoare.
+Pozitia pivotului este initial -1 dar va deveni cel putin 0 pe parcursul algoritmului.
+
+Pasul 1 : Elementul 21 este mai mic decat pivotul ---> se interschimba 21 cu 21 iar pozitia pivotului devine 0
+Vectorul la acest pas al algoritmului este : [21, 7, 30, 12, 64, 40, 57, 93, 33, 94]
+
+Pasul 2 : Elementul 7 este mai mic decat pivotul ---> se interschimba 7 cu 7 iar pozitia pivotului devine 1
+Vectorul la acest pas al algoritmului este : [21, 7, 30, 12, 64, 40, 57, 93, 33, 94]
+
+Pasul 3 : Elementul 30 este mai mic decat pivotul ---> se interschimba 30 cu 30 iar pozitia pivotului devine 2
+Vectorul la acest pas al algoritmului este : [21, 7, 30, 12, 64, 40, 57, 93, 33, 94]
+
+Pasul 4 : Elementul 12 este mai mic decat pivotul ---> se interschimba 12 cu 12 iar pozitia pivotului devine 3
+Vectorul la acest pas al algoritmului este : [21, 7, 30, 12, 64, 40, 57, 93, 33, 94]
+
+Pasul 5 : Elementul 64 este mai mic decat pivotul ---> se interschimba 64 cu 64 iar pozitia pivotului devine 4
+Vectorul la acest pas al algoritmului este : [21, 7, 30, 12, 64, 40, 57, 93, 33, 94]
+
+Pasul 6 : Elementul 40 este mai mic decat pivotul ---> se interschimba 40 cu 40 iar pozitia pivotului devine 5
+Vectorul la acest pas al algoritmului este : [21, 7, 30, 12, 64, 40, 57, 93, 33, 94]
+
+Pasul 7 : Elementul 57 este mai mic decat pivotul ---> se interschimba 57 cu 57 iar pozitia pivotului devine 6
+Vectorul la acest pas al algoritmului este : [21, 7, 30, 12, 64, 40, 57, 93, 33, 94]
+
+Pasul 8 : Elementul 93 este mai mic decat pivotul ---> se interschimba 93 cu 93 iar pozitia pivotului devine 7
+Vectorul la acest pas al algoritmului este : [21, 7, 30, 12, 64, 40, 57, 93, 33, 94]
+
+Pasul 9 : Elementul 33 este mai mic decat pivotul ---> se interschimba 33 cu 33 iar pozitia pivotului devine 8
+Vectorul la acest pas al algoritmului este : [21, 7, 30, 12, 64, 40, 57, 93, 33, 94]
+
+Pasul 10 : Elementul 94 este egal cu pivotul ---> se interschimba 94 cu 94 iar pozitia pivotului devine 9
+Vectorul la acest pas al algoritmului este : [21, 7, 30, 12, 64, 40, 57, 93, 33, 94]
+
+
+</pre><pre id="2" onclick="afisare(2)">
+Problem2
+2. Problema 2 nu este rezolvata. Datele de intrare: Date</pre>

@@ -1,23 +1,78 @@
-<pre>
-1. Problema 1 nu este rezolvata. Datele de intrare: Date
-</pre>
-<pre>
-2. Problema 2 nu este rezolvata. Datele de intrare: Date
-</pre>
-<pre>
-0'. Parcurgem sirul si folosim o variablia pentru a retine maximul curent.
-Presupunem ca primul element este maximul.
-La fiecare pas verificam daca elementul curent e mai mare si modificam variabila.
-	Elementul curent este: 7 
-	Elementul curent este: 18 ==> Elementul este mai mare decat maximul (7) -> maximul devine 18.
-	Elementul curent este: 42 ==> Elementul este mai mare decat maximul (18) -> maximul devine 42.
-	Elementul curent este: 54 ==> Elementul este mai mare decat maximul (42) -> maximul devine 54.
-	Elementul curent este: 86 ==> Elementul este mai mare decat maximul (54) -> maximul devine 86.
-	Elementul curent este: 66 
-	Elementul curent este: 39 
-	Elementul curent este: 74 
-Elementul maxim este: 86.
-</pre>
-<pre>
-0. Numerele sortate: [14, 16, 20, 28, 40, 42, 46, 80, 83]
-</pre>
+<pre id="0" onclick="afisare(0)">
+Problem1
+1. Problema 1 nu este rezolvata. Datele de intrare: Date</pre><pre id="1" onclick="afisare(1)">
+Problem11
+Idee de rezolvare:
+Partitionarea Lomuto are ca scop alegerea unui element dintr-un vector de numere, care se va numi
+pivot si modificarea pozitiilor elementelor din vector astfel incat, la finalul algoritmului,
+elementele cu valoare mai mica decat pivotul se vor afla la stanga sa, iar cele mai mari decat
+pivotul, in dreapta acestuia, pivotul ajungand pe pozitia in care ar sta daca am sorta vectorul.
+
+Parcurgem sirul de la primul la ultimul element si comparam valoarea pivotului cu valoarea
+elementului curent. Cand gasim un element mai mic decat pivotul, il interschimbam cu elementul
+de pe pozitia i (initial -1), i fiind numarul de elemente mai mici decat pivotul in momentul respectiv
+La final, i+1 va reprezenta pozitia pe care trebuie dus pivotul
+
+Incepem partitionarea:
+Este 86 mai mic decat 86?
+NU
+Este 86 egal cu 86?
+DA
+Retinem pozitia pivotului
+Este 43 mai mic decat 86?
+DA
+Interschimbam 43 cu 86 iar i devine 0
+Sirul devine:[43, 86, 71, 38, 83, 52, 36, 98, 54]
+Este 86 egal cu 86?
+DA
+Retinem pozitia pivotului
+Este 71 mai mic decat 86?
+DA
+Interschimbam 71 cu 86 iar i devine 1
+Sirul devine:[43, 71, 86, 38, 83, 52, 36, 98, 54]
+Este 86 egal cu 86?
+DA
+Retinem pozitia pivotului
+Este 38 mai mic decat 86?
+DA
+Interschimbam 38 cu 86 iar i devine 2
+Sirul devine:[43, 71, 38, 86, 83, 52, 36, 98, 54]
+Este 86 egal cu 86?
+DA
+Retinem pozitia pivotului
+Este 83 mai mic decat 86?
+DA
+Interschimbam 83 cu 86 iar i devine 3
+Sirul devine:[43, 71, 38, 83, 86, 52, 36, 98, 54]
+Este 86 egal cu 86?
+DA
+Retinem pozitia pivotului
+Este 52 mai mic decat 86?
+DA
+Interschimbam 52 cu 86 iar i devine 4
+Sirul devine:[43, 71, 38, 83, 52, 86, 36, 98, 54]
+Este 86 egal cu 86?
+DA
+Retinem pozitia pivotului
+Este 36 mai mic decat 86?
+DA
+Interschimbam 36 cu 86 iar i devine 5
+Sirul devine:[43, 71, 38, 83, 52, 36, 86, 98, 54]
+Este 86 egal cu 86?
+DA
+Retinem pozitia pivotului
+Este 98 mai mic decat 86?
+NU
+Este 98 egal cu 86?
+NU
+Este 54 mai mic decat 86?
+DA
+Interschimbam 54 cu 86 iar i devine 6
+Sirul devine:[43, 71, 38, 83, 52, 36, 54, 98, 86]
+Este 86 egal cu 86?
+DA
+Retinem pozitia pivotului
+Trecem la urmatorul element din sir.
+Am ajuns la capatul sirului. In final, avem vectorul partitionat: [43, 71, 38, 83, 52, 36, 54, 86, 98]</pre><pre id="2" onclick="afisare(2)">
+Problem2
+2. Problema 2 nu este rezolvata. Datele de intrare: Date</pre>

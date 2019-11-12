@@ -1,22 +1,51 @@
-<pre>
-1. Problema 1 nu este rezolvata. Datele de intrare: Date
-</pre>
-<pre>
-2. Problema 2 nu este rezolvata. Datele de intrare: Date
-</pre>
-<pre>
-0'. Parcurgem sirul si folosim o variablia pentru a retine maximul curent.
-Presupunem ca primul element este maximul.
-La fiecare pas verificam daca elementul curent e mai mare si modificam variabila.
-	Elementul curent este: 43 
-	Elementul curent este: 14 
-	Elementul curent este: 95 ==> Elementul este mai mare decat maximul (43) -> maximul devine 95.
-	Elementul curent este: 39 
-	Elementul curent este: 68 
-	Elementul curent este: 6 
-	Elementul curent este: 66 
-Elementul maxim este: 95.
-</pre>
-<pre>
-0. Numerele sortate: [7, 21, 25, 41, 50, 52, 81]
-</pre>
+<pre id="0" onclick="afisare(0)">
+Problem1
+1. Problema 1 nu este rezolvata. Datele de intrare: Date</pre><pre id="1" onclick="afisare(1)">
+Problem11
+O partitionare a vectorului este:
+[9, 22, 30, 95, 80, 90, 36, 40, 85, 35]
+
+
+Pivotul este : 30
+Vrem ca pivotul sa se afle pe ultima pozitie in sir
+Daca nu se afla pe ultima pozitie atunci il interschimbam cu elementul aflat pe pozitia respectiva
+Dupa interschimbarea pivotului sirul devine : [90, 36, 35, 95, 80, 9, 22, 40, 85, 30]
+
+Vom calcula pozitia unde trebuie sa stea pivotul,crescand indicele si efectuand interschimbari a.i. elementele mai mici sau egale sa fie in stanga sa.
+La sfarsit pivotul va fi mutat pe pozitia corespunzatoare.
+Pozitia pivotului este initial -1 dar va deveni cel putin 0 pe parcursul algoritmului.
+
+Pasul 1 : Elementul 90 este mai mare decat pivotul ---> vectorul si pozitia pivotului raman aceleasi
+Vectorul la acest pas al algoritmului este : [90, 36, 35, 95, 80, 9, 22, 40, 85, 30]
+
+Pasul 2 : Elementul 36 este mai mare decat pivotul ---> vectorul si pozitia pivotului raman aceleasi
+Vectorul la acest pas al algoritmului este : [90, 36, 35, 95, 80, 9, 22, 40, 85, 30]
+
+Pasul 3 : Elementul 35 este mai mare decat pivotul ---> vectorul si pozitia pivotului raman aceleasi
+Vectorul la acest pas al algoritmului este : [90, 36, 35, 95, 80, 9, 22, 40, 85, 30]
+
+Pasul 4 : Elementul 95 este mai mare decat pivotul ---> vectorul si pozitia pivotului raman aceleasi
+Vectorul la acest pas al algoritmului este : [90, 36, 35, 95, 80, 9, 22, 40, 85, 30]
+
+Pasul 5 : Elementul 80 este mai mare decat pivotul ---> vectorul si pozitia pivotului raman aceleasi
+Vectorul la acest pas al algoritmului este : [90, 36, 35, 95, 80, 9, 22, 40, 85, 30]
+
+Pasul 6 : Elementul 9 este mai mic decat pivotul ---> se interschimba 9 cu 90 iar pozitia pivotului devine 0
+Vectorul la acest pas al algoritmului este : [9, 36, 35, 95, 80, 90, 22, 40, 85, 30]
+
+Pasul 7 : Elementul 22 este mai mic decat pivotul ---> se interschimba 22 cu 36 iar pozitia pivotului devine 1
+Vectorul la acest pas al algoritmului este : [9, 22, 35, 95, 80, 90, 36, 40, 85, 30]
+
+Pasul 8 : Elementul 40 este mai mare decat pivotul ---> vectorul si pozitia pivotului raman aceleasi
+Vectorul la acest pas al algoritmului este : [9, 22, 35, 95, 80, 90, 36, 40, 85, 30]
+
+Pasul 9 : Elementul 85 este mai mare decat pivotul ---> vectorul si pozitia pivotului raman aceleasi
+Vectorul la acest pas al algoritmului este : [9, 22, 35, 95, 80, 90, 36, 40, 85, 30]
+
+Pasul 10 : Elementul 30 este egal cu pivotul ---> se interschimba 30 cu 35 iar pozitia pivotului devine 2
+Vectorul la acest pas al algoritmului este : [9, 22, 30, 95, 80, 90, 36, 40, 85, 35]
+
+
+</pre><pre id="2" onclick="afisare(2)">
+Problem2
+2. Problema 2 nu este rezolvata. Datele de intrare: Date</pre>

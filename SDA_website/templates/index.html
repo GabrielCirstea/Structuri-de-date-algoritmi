@@ -10,7 +10,17 @@
 	
 	
 	<br><br><br>
-	<p><b><a href="/">Grupe</a></b></p>
+	
+	{% for line in content %}
+			{{ line }}<br>
+		{% endfor %}
+		
+	<br><br><br>
+	<a href="/">
+		<div class="groupe">
+			Grupe
+		</div>
+	</a>
 	
 		
 </center>

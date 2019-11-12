@@ -1,22 +1,45 @@
-<pre>
-1. Problema 1 nu este rezolvata. Datele de intrare: Date
-</pre>
-<pre>
-2. Problema 2 nu este rezolvata. Datele de intrare: Date
-</pre>
-<pre>
-0. Numerele sortate: [17, 46, 56, 73, 77, 80, 83]
-</pre>
-<pre>
-0'. Parcurgem sirul si folosim o variablia pentru a retine maximul curent.
-Presupunem ca primul element este maximul.
-La fiecare pas verificam daca elementul curent e mai mare si modificam variabila.
-	Elementul curent este: 64 
-	Elementul curent este: 77 ==> Elementul este mai mare decat maximul (64) -> maximul devine 77.
-	Elementul curent este: 65 
-	Elementul curent este: 93 ==> Elementul este mai mare decat maximul (77) -> maximul devine 93.
-	Elementul curent este: 71 
-	Elementul curent este: 42 
-	Elementul curent este: 94 ==> Elementul este mai mare decat maximul (93) -> maximul devine 94.
-Elementul maxim este: 94.
-</pre>
+<pre id="0" onclick="afisare(0)">
+Problem1
+1. Problema 1 nu este rezolvata. Datele de intrare: Date</pre><pre id="1" onclick="afisare(1)">
+Problem11
+Idee de rezolvare:
+Partitionarea Lomuto are ca scop alegerea unui element dintr-un vector de numere, care se va numi
+pivot si modificarea pozitiilor elementelor din vector astfel incat, la finalul algoritmului,
+elementele cu valoare mai mica decat pivotul se vor afla la stanga sa, iar cele mai mari decat
+pivotul, in dreapta acestuia, pivotul ajungand pe pozitia in care ar sta daca am sorta vectorul.
+
+Parcurgem sirul de la primul la ultimul element si comparam valoarea pivotului cu valoarea
+elementului curent. Cand gasim un element mai mic decat pivotul, il interschimbam cu elementul
+de pe pozitia i (initial -1), i fiind numarul de elemente mai mici decat pivotul in momentul respectiv
+La final, i+1 va reprezenta pozitia pe care trebuie dus pivotul
+
+Incepem partitionarea:
+Este 82 mai mic decat 56?
+NU
+Este 82 egal cu 56?
+NU
+Este 99 mai mic decat 56?
+NU
+Este 99 egal cu 56?
+NU
+Este 26 mai mic decat 56?
+DA
+Interschimbam 26 cu 82 iar i devine 0
+Sirul devine:[26, 99, 82, 56, 47]
+Este 82 egal cu 56?
+NU
+Este 56 mai mic decat 56?
+NU
+Este 56 egal cu 56?
+DA
+Retinem pozitia pivotului
+Este 47 mai mic decat 56?
+DA
+Interschimbam 47 cu 99 iar i devine 1
+Sirul devine:[26, 47, 82, 56, 99]
+Este 99 egal cu 56?
+NU
+Trecem la urmatorul element din sir.
+Am ajuns la capatul sirului. In final, avem vectorul partitionat: [26, 47, 56, 82, 99]</pre><pre id="2" onclick="afisare(2)">
+Problem2
+2. Problema 2 nu este rezolvata. Datele de intrare: Date</pre>

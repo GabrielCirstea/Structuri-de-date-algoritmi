@@ -1,12 +1,8 @@
-<pre>
-1. Textul problemei 1
-</pre>
-<pre>
-2. Textul problemei 2
-</pre>
-<pre>
-0'. Se primesc numerele: 7, 18, 42, 54, 86, 66, 39, 74. Gasiti elementul maxim.
-</pre>
-<pre>
-0. Se primesc numerele: 14, 16, 20, 28, 40, 42, 46, 80, 83. Sortati numerele folosind metoda bulelor.
-</pre>
+<pre id="0" onclick="afisare(0)">
+Problem1
+1. Textul problemei 1</pre><pre id="1" onclick="afisare(1)">
+Problem11
+11. Partitionati Lomuto urmatorul vector: [86, 43, 71, 38, 83, 52, 36, 98, 54] folosind pivotul: 86
+</pre><pre id="2" onclick="afisare(2)">
+Problem2
+2. Textul problemei 2</pre>

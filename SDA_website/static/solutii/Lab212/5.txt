@@ -1,21 +1,56 @@
-<pre>
-1. Problema 1 nu este rezolvata. Datele de intrare: Date
-</pre>
-<pre>
-2. Problema 2 nu este rezolvata. Datele de intrare: Date
-</pre>
-<pre>
-0'. Parcurgem sirul si folosim o variablia pentru a retine maximul curent.
-Presupunem ca primul element este maximul.
-La fiecare pas verificam daca elementul curent e mai mare si modificam variabila.
-	Elementul curent este: 37 
-	Elementul curent este: 87 ==> Elementul este mai mare decat maximul (37) -> maximul devine 87.
-	Elementul curent este: 5 
-	Elementul curent este: 85 
-	Elementul curent este: 32 
-	Elementul curent este: 80 
-Elementul maxim este: 87.
-</pre>
-<pre>
-0. Numerele sortate: [10, 31, 47, 78, 93, 98]
-</pre>
+<pre id="0" onclick="afisare(0)">
+Problem1
+1. Problema 1 nu este rezolvata. Datele de intrare: Date</pre><pre id="1" onclick="afisare(1)">
+Problem11
+Idee de rezolvare:
+Partitionarea Lomuto are ca scop alegerea unui element dintr-un vector de numere, care se va numi
+pivot si modificarea pozitiilor elementelor din vector astfel incat, la finalul algoritmului,
+elementele cu valoare mai mica decat pivotul se vor afla la stanga sa, iar cele mai mari decat
+pivotul, in dreapta acestuia, pivotul ajungand pe pozitia in care ar sta daca am sorta vectorul.
+
+Parcurgem sirul de la primul la ultimul element si comparam valoarea pivotului cu valoarea
+elementului curent. Cand gasim un element mai mic decat pivotul, il interschimbam cu elementul
+de pe pozitia i (initial -1), i fiind numarul de elemente mai mici decat pivotul in momentul respectiv
+La final, i+1 va reprezenta pozitia pe care trebuie dus pivotul
+
+Incepem partitionarea:
+Este 52 mai mic decat 65?
+DA
+Interschimbam 52 cu 52 iar i devine 0
+Sirul devine:[52, 28, 86, 65, 53, 55, 97]
+Este 52 egal cu 65?
+Este 28 mai mic decat 65?
+DA
+Interschimbam 28 cu 28 iar i devine 1
+Sirul devine:[52, 28, 86, 65, 53, 55, 97]
+Este 28 egal cu 65?
+Este 86 mai mic decat 65?
+NU
+Este 86 egal cu 65?
+NU
+Este 65 mai mic decat 65?
+NU
+Este 65 egal cu 65?
+DA
+Retinem pozitia pivotului
+Este 53 mai mic decat 65?
+DA
+Interschimbam 53 cu 86 iar i devine 2
+Sirul devine:[52, 28, 53, 65, 86, 55, 97]
+Este 86 egal cu 65?
+NU
+Este 55 mai mic decat 65?
+DA
+Interschimbam 55 cu 65 iar i devine 3
+Sirul devine:[52, 28, 53, 55, 86, 65, 97]
+Este 65 egal cu 65?
+DA
+Retinem pozitia pivotului
+Este 97 mai mic decat 65?
+NU
+Este 97 egal cu 65?
+NU
+Trecem la urmatorul element din sir.
+Am ajuns la capatul sirului. In final, avem vectorul partitionat: [52, 28, 53, 55, 65, 86, 97]</pre><pre id="2" onclick="afisare(2)">
+Problem2
+2. Problema 2 nu este rezolvata. Datele de intrare: Date</pre>

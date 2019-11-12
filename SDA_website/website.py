@@ -12,7 +12,13 @@ def grupe():
 @app.route('/<int:grupa>')
 def index(grupa):
     # print(grupa);
-    return render_template('index.html',grupa = grupa)
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../import_error'+str(grupa)+'.txt')
+    try:
+        f = open(path)
+        content = f.readlines()
+    except:
+        content = ["Totul bine pana acum!",":)"]
+    return render_template('index.html',grupa = grupa,content=content)
 
 #salvare problema github
 import os
@@ -21,10 +27,19 @@ import importlib
 @app.route('/index/get_github/<int:GRUPA>')
 def github(GRUPA):
     # delete old repo
-    shutil.rmtree('Lab' + str(GRUPA))
+    try:
+        shutil.rmtree('Lab' + str(GRUPA))
+    except:
+        pass;
 
     # clone current repo
     subprocess.call(('git clone https://github.com/AdminSDA/Lab' + str(GRUPA)  + '.git').split())
+    #Stergere exeple
+    try:
+        os.remove('Lab'+str(GRUPA)+'/problem_test1.py')
+        os.remove('Lab'+str(GRUPA)+'/problem_test2.py')
+    except Exception as e:
+        print(e);
     return "Okay. <a href='/'>Back</a>"
            
 
@@ -72,6 +87,12 @@ def random_page_sol(grupa):
 @app.route('/index/generare/<int:GRUPA>')
 def generare(GRUPA):
     #path = os.path.join(os.path.dirname(os.path.abspath(__file__)),'static/')
+    
+    try:
+        os.remove('import_error'+str(GRUPA)+'.txt')
+    except:
+        pass;
+        
     for i in range(1,101):
         os.system('python3 generare.py '+ str(GRUPA) + ' ' + str(i))
     return redirect(url_for('grupe'))

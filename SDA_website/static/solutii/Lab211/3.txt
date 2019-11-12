@@ -1,20 +1,51 @@
-<pre>
-1. Problema 1 nu este rezolvata. Datele de intrare: Date
-</pre>
-<pre>
-2. Problema 2 nu este rezolvata. Datele de intrare: Date
-</pre>
-<pre>
-0'. Parcurgem sirul si folosim o variablia pentru a retine maximul curent.
-Presupunem ca primul element este maximul.
-La fiecare pas verificam daca elementul curent e mai mare si modificam variabila.
-	Elementul curent este: 67 
-	Elementul curent este: 91 ==> Elementul este mai mare decat maximul (67) -> maximul devine 91.
-	Elementul curent este: 89 
-	Elementul curent este: 29 
-	Elementul curent este: 12 
-Elementul maxim este: 91.
-</pre>
-<pre>
-0. Numerele sortate: [6, 10, 13, 56, 63, 75, 96]
-</pre>
+<pre id="0" onclick="afisare(0)">
+Problem1
+1. Problema 1 nu este rezolvata. Datele de intrare: Date</pre><pre id="1" onclick="afisare(1)">
+Problem11
+O partitionare a vectorului este:
+[23, 11, 36, 60, 35, 52, 29, 64, 78, 80]
+
+
+Pivotul este : 64
+Vrem ca pivotul sa se afle pe ultima pozitie in sir
+Daca nu se afla pe ultima pozitie atunci il interschimbam cu elementul aflat pe pozitia respectiva
+Dupa interschimbarea pivotului sirul devine : [78, 23, 11, 36, 60, 35, 52, 80, 29, 64]
+
+Vom calcula pozitia unde trebuie sa stea pivotul,crescand indicele si efectuand interschimbari a.i. elementele mai mici sau egale sa fie in stanga sa.
+La sfarsit pivotul va fi mutat pe pozitia corespunzatoare.
+Pozitia pivotului este initial -1 dar va deveni cel putin 0 pe parcursul algoritmului.
+
+Pasul 1 : Elementul 78 este mai mare decat pivotul ---> vectorul si pozitia pivotului raman aceleasi
+Vectorul la acest pas al algoritmului este : [78, 23, 11, 36, 60, 35, 52, 80, 29, 64]
+
+Pasul 2 : Elementul 23 este mai mic decat pivotul ---> se interschimba 23 cu 78 iar pozitia pivotului devine 0
+Vectorul la acest pas al algoritmului este : [23, 78, 11, 36, 60, 35, 52, 80, 29, 64]
+
+Pasul 3 : Elementul 11 este mai mic decat pivotul ---> se interschimba 11 cu 78 iar pozitia pivotului devine 1
+Vectorul la acest pas al algoritmului este : [23, 11, 78, 36, 60, 35, 52, 80, 29, 64]
+
+Pasul 4 : Elementul 36 este mai mic decat pivotul ---> se interschimba 36 cu 78 iar pozitia pivotului devine 2
+Vectorul la acest pas al algoritmului este : [23, 11, 36, 78, 60, 35, 52, 80, 29, 64]
+
+Pasul 5 : Elementul 60 este mai mic decat pivotul ---> se interschimba 60 cu 78 iar pozitia pivotului devine 3
+Vectorul la acest pas al algoritmului este : [23, 11, 36, 60, 78, 35, 52, 80, 29, 64]
+
+Pasul 6 : Elementul 35 este mai mic decat pivotul ---> se interschimba 35 cu 78 iar pozitia pivotului devine 4
+Vectorul la acest pas al algoritmului este : [23, 11, 36, 60, 35, 78, 52, 80, 29, 64]
+
+Pasul 7 : Elementul 52 este mai mic decat pivotul ---> se interschimba 52 cu 78 iar pozitia pivotului devine 5
+Vectorul la acest pas al algoritmului este : [23, 11, 36, 60, 35, 52, 78, 80, 29, 64]
+
+Pasul 8 : Elementul 80 este mai mare decat pivotul ---> vectorul si pozitia pivotului raman aceleasi
+Vectorul la acest pas al algoritmului este : [23, 11, 36, 60, 35, 52, 78, 80, 29, 64]
+
+Pasul 9 : Elementul 29 este mai mic decat pivotul ---> se interschimba 29 cu 78 iar pozitia pivotului devine 6
+Vectorul la acest pas al algoritmului este : [23, 11, 36, 60, 35, 52, 29, 80, 78, 64]
+
+Pasul 10 : Elementul 64 este egal cu pivotul ---> se interschimba 64 cu 80 iar pozitia pivotului devine 7
+Vectorul la acest pas al algoritmului este : [23, 11, 36, 60, 35, 52, 29, 64, 78, 80]
+
+
+</pre><pre id="2" onclick="afisare(2)">
+Problem2
+2. Problema 2 nu este rezolvata. Datele de intrare: Date</pre>

@@ -62,21 +62,6 @@ if __name__ == '__main__':
                 f.write(str(e)+"\n");
             # os.remove('Lab'+str(sys.argv[1])+'/' + str(derived.__name__)+'.py');
 
-            statement += str(p)
-
-            solution = str(derived.__name__);
-            solution +="\n";
-
-            solution += str(p.solve())
-
-            statements.append(statement.replace('\n','<br>'))
-            solutions.append(solution.replace('\n','<br>'))
-        except Exception as e:
-            print(e);
-            with open("import_error"+str(sys.argv[1])+".txt","a") as f:
-                f.write(module + ":\n");
-                f.write(str(e));
-
 
     #sortam statement-urile si solutiile in functie de numarul problemei
     statements = sorted(statements, key=lambda st: numere(st.split('<br>',1)[0]))

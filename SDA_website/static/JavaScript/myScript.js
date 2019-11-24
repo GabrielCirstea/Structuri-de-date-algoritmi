@@ -1,16 +1,6 @@
-function start(){
-	document.getElementById("demo").innerHTML = "da";
-}
 function afisare(id) {
-   var x = document.getElementById(id);
-  // var str = x.innerHTML;
-  // var leng = 100;
-  // if(x.innerHTML.length > leng){
-	// x.innerHTML = str.substring(4,leng);
-  // }
-  // else{
-	// x.innerHTML = str;
-  // }
+	// face elementele de height auto -- pt sertarase
+  var x = document.getElementById(id);
   if (x.style.height === "100px") {
     x.style.height = "auto";
   } else {

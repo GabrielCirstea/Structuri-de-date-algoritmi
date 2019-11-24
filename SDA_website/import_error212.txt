@@ -1,0 +1,5 @@
+problem8.py:
+invalid syntax (problem8.py, line 17)Problem1:
+Can't convert 'list' object to str implicitly
+Problem7:
+unsupported operand type(s) for -: 'NoneType' and 'int'

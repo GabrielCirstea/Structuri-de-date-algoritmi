@@ -3,13 +3,37 @@
 {%block content %}
 
 <center>
-	<h1> Platforma pt teme </h1>
+	<h1> Platforma pentru teme </h1>
 	<br>
 		 <h3>Aici gasiti diverse variante ale problemelor rezolvate ca tema 
 										la grupa {{ grupa }}</h3>
 	
 	
 	<br><br><br>
+	
+	<h2>Urca Problema pe site</h2>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+<form class="upload" method="post" action="" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<input class="upload_imput" type="file" name="file" autocomplete="off" required>
+		</p>
+    </dl>
+    <p>
+		<input class="submit" type="submit" value="Submit">
+	</p>
+</form>
+	<br>
 	
 	{% for line in content %}
 			{{ line }}<br>

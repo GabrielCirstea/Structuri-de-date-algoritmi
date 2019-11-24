@@ -13,19 +13,20 @@ pre {
   font-family: "Times New Roman", Times, serif;
   /* white-space: 0; */
   text-align: left;
-  margin: 0px;
-  padding: 0px;
-  line-height: 70%;
+  margin: 10px;
+  padding: 10px;
+  /* line-height: 70%; */
   white-space: pre-wrap;
   word-break: keep-all;
   /* border: 1px solid black; */
   min-height: 100px;
   height: 100px;
   border-radius: 20px;
-  overflow: hidden;
+  overflow-y: hidden;
 } 
 pre:hover{
 	border: 1px solid black;
+	height: auto;
 	/* background-image: */
 		/* linear-gradient( */
 		  /* 0deg, #f2e6ff, #ffffff */

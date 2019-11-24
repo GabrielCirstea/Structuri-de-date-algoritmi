@@ -5,11 +5,8 @@ from problem import Problem
 import sys
 
 def numere(nume):
-<<<<<<< HEAD
+
 # ''' Returneaza numarul problemui.  CONDITIE: Numarul problemei sa fie scris la sfarsit ''' 
-=======
-# ''' Returneaza numarul problemui.  CONDITIE: Numarul problemei sa fie scris la sfarsit '''
->>>>>>> 4ecb1641b63cf1826bd22ba53afde784d40dc5ec
     for i in range(len(nume)-1,0,-1):
         try:
             nr = int(nume[i:]);
@@ -47,7 +44,6 @@ if __name__ == '__main__':
             p = derived()
             statement = str(derived.__name__);
             statement+="\n";
-<<<<<<< HEAD
             
             statement += str(p)
             
@@ -65,7 +61,6 @@ if __name__ == '__main__':
                 f.write(str(derived.__name__)+":\n");
                 f.write(str(e)+"\n");
             # os.remove('Lab'+str(sys.argv[1])+'/' + str(derived.__name__)+'.py');
-=======
 
             statement += str(p)
 
@@ -73,7 +68,6 @@ if __name__ == '__main__':
             solution +="\n";
 
             solution += str(p.solve())
->>>>>>> 4ecb1641b63cf1826bd22ba53afde784d40dc5ec
 
             statements.append(statement.replace('\n','<br>'))
             solutions.append(solution.replace('\n','<br>'))

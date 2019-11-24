@@ -17,6 +17,14 @@ ALLOWED_EXTENSIONS = set(['py'])
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+import os
+import importlib
+
+if not os.path.exists("uploads/"):
+    os.makedirs("uploads/");
+    os.makedirs("uploads/211");
+    os.makedirs("uploads/212");
+
 @app.route('/')
 def grupe():
     return render_template('grupe.html')
@@ -57,8 +65,6 @@ def index(grupa):
     return render_template('index.html',grupa = grupa,content=content)
 
 #salvare problema github
-import os
-import importlib
 
 @app.route('/index/get_github/<int:GRUPA>')
 def github(GRUPA):

@@ -47,11 +47,12 @@ class Problem16(Problem):
         # acum mutam pivotul si toate elementele...
         print("");
         j = i+1;
-        while(p<=right):
+        while(p<=right): #plecam de la p pana la capatul sirului
+                         # si mutam elementele egale cu pivotul acolo unde trebuie sa fie
             v[j], v[p] = v[p], v[j];
             j+=1;
             p+=1;
-            # print(v)
+            nr+=1; #inca o interschimbare
         self.nr = nr;
         return i + 1  # pozitia pivotului
 

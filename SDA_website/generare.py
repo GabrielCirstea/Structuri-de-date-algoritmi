@@ -3,6 +3,8 @@ import glob
 from problem import Problem
 
 import sys
+import time
+import timeout_decorator
 
 def numere(nume):
 
@@ -17,6 +19,30 @@ def numere(nume):
                 return int(nume[i+1:])
         #nu ar trebui sa ajunga aici
     return None;
+
+@timeout_decorator.timeout(2)
+def executare(derived,statements,solutions):
+    try:
+        p = derived();
+        statement = str(derived.__name__);
+        statement+="\n";
+        
+        statement += str(p)
+        
+        solution = str(derived.__name__);
+        solution +="\n";
+        
+        solution += p.solve()
+        
+        statements.append(statement.replace('\n','<br>'))
+        solutions.append(solution.replace('\n','<br>'))
+    except Exception as e:
+            # solution +='<code>Probleme la rulare</code>'
+            print(e);
+            with open("import_error"+str(sys.argv[1])+".txt","a") as f:
+                f.write(str(derived.__name__)+":\n");
+                f.write(str(e)+"\n");
+            # os.remove('Lab'+str(sys.argv[1])+'/' + str(derived.__name__)+'.py'); 
 
 if __name__ == '__main__':
 
@@ -40,39 +66,13 @@ if __name__ == '__main__':
     solutions = []
 
     for derived in Problem.__subclasses__():
-        try:
-            p = derived()
-            statement = str(derived.__name__);
-            statement+="\n";
-            
-            statement += str(p)
-            
-            solution = str(derived.__name__);
-            solution +="\n";
-            
-            solution += p.solve()
-            
-            statements.append(statement.replace('\n','<br>'))
-            solutions.append(solution.replace('\n','<br>'))
-        except Exception as e:
-            # solution +='<code>Probleme la rulare</code>'
-            print(e);
-            with open("import_error"+str(sys.argv[1])+".txt","a") as f:
-                f.write(str(derived.__name__)+":\n");
-                f.write(str(e)+"\n");
-            # os.remove('Lab'+str(sys.argv[1])+'/' + str(derived.__name__)+'.py');
+        executare(derived,statements,solutions);
 
 
     #sortam statement-urile si solutiile in functie de numarul problemei
     statements = sorted(statements, key=lambda st: numere(st.split('<br>',1)[0]))
     solutions = sorted(solutions, key=lambda st: numere(st.split('<br>',1)[0]))
 
-    for st in statements:
-        print(st.split('<br>',1)[0])
-
-    #sortam statement-urile si solutiile in functie de numarul problemei
-    statements = sorted(statements, key=lambda st: numere(st.split('<br>',1)[0]))
-    solutions = sorted(solutions, key=lambda st: numere(st.split('<br>',1)[0]))
     
     path = "static/"
     folder_var = path + 'variante/'

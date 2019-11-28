@@ -57,7 +57,7 @@ if __name__ == '__main__':
                 print('error import ' + module + '\nNow will delete it')
                 with open("import_error"+str(sys.argv[1])+".txt","a") as f:
                     f.write(module + ":\n");
-                    f.write(str(e));
+                    f.write(str(e)+'\n');
                 # os.remove('Lab'+str(sys.argv[1])+'/' + module)
 
     # For each subclass generate a statement and

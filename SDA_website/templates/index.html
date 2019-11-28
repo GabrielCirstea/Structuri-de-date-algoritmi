@@ -34,7 +34,13 @@
 	</p>
 </form>
 	<br>
+	<p> Uploaded Files: <p>
+	{% for line in upload_files %}
+			{{ line }}<br>
+		{% endfor %}
 	
+	<br>
+	<p> Probleme la rulare:</p>
 	{% for line in content %}
 			{{ line }}<br>
 		{% endfor %}

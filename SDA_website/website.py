@@ -62,7 +62,14 @@ def index(grupa):
         content = f.readlines()
     except:
         content = ["Totul bine pana acum!",":)"]
-    return render_template('index.html',grupa = grupa,content=content)
+        
+    upload_files = [];
+    for module in os.listdir('uploads/'+str(grupa)+'/.'):
+        if(module[-3:] == '.py'):
+            upload_files.append(module);
+    if len(upload_files) == 0:
+        upload_files = ["Mai nimic pana acum"];
+    return render_template('index.html',grupa = grupa,content=content,upload_files = upload_files)
 
 #salvare problema github
 

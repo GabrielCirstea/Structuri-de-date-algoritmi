@@ -1,2 +1,12 @@
-problem7.py:
-No module named 'modules.node'
+
+Erori:
+Eroare la import modul: problem25.py
+
+
+Eroare la import modul: problem26.py
+
+
+Eroare la import modul: problem7.py
+
+
+

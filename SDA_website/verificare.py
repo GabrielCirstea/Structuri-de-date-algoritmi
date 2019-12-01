@@ -41,6 +41,8 @@ def Verificare(module,grupa):
     #Sa urcam pe github
     # os.system("python3 git_clone.py");
     os.system("cd Lab"+str(grupa)+" && git pull");
+    subprocess.run('git fetch --all'.split(), cwd=os.getcwd() + '/Lab' + str(grupa))
+    subprocess.run('git reset --hard origin'.split(), cwd=os.getcwd() + '/Lab' + str(grupa))
     copyfile("uploads/"+str(grupa)+"/"+module,"Lab"+str(grupa)+"/"+module);
     #asta ramane pt cand fac cont pe github
     os.system("cd Lab"+str(grupa)+" && git add "+module);

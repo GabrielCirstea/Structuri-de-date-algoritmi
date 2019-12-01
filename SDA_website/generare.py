@@ -3,6 +3,8 @@ import glob
 from problem import Problem
 
 import sys
+import subprocess 
+import re
 import time
 import timeout_decorator
 
@@ -20,81 +22,40 @@ def numere(nume):
         #nu ar trebui sa ajunga aici
     return None;
 
-@timeout_decorator.timeout(2)
-def executare(derived,statements,solutions):
-    try:
-        p = derived();
-        statement = str(derived.__name__);
-        statement+="\n";
-        
-        statement += str(p)
-        
-        solution = str(derived.__name__);
-        solution +="\n";
-        
-        solution += p.solve()
-        
-        statements.append(statement.replace('\n','<br>'))
-        solutions.append(solution.replace('\n','<br>'))
-    except Exception as e:
-            # solution +='<code>Probleme la rulare</code>'
-            print(e);
-            with open("import_error"+str(sys.argv[1])+".txt","a") as f:
-                f.write(str(derived.__name__)+":\n");
-                f.write(str(e)+"\n");
-            # os.remove('Lab'+str(sys.argv[1])+'/' + str(derived.__name__)+'.py'); 
 
 if __name__ == '__main__':
 
     if(len(sys.argv) != 3):
         exit();
 
-    for module in os.listdir('Lab'+str(sys.argv[1])+'/.'):
-        if module[-3:] == '.py':
-            try:
-                __import__('Lab'+str(sys.argv[1])+'.' + module[:-3], locals(), globals())
-            except Exception as e:
-                print('error import ' + module + '\nNow will delete it')
-                with open("import_error"+str(sys.argv[1])+".txt","a") as f:
-                    f.write(module + ":\n");
-                    f.write(str(e)+'\n');
-                # os.remove('Lab'+str(sys.argv[1])+'/' + module)
-
-    # For each subclass generate a statement and
-    # the detailed solution for that statement
-    statements = []
-    solutions = []
-
-    for derived in Problem.__subclasses__():
-        executare(derived,statements,solutions);
-
-
-    #sortam statement-urile si solutiile in functie de numarul problemei
-    statements = sorted(statements, key=lambda st: numere(st.split('<br>',1)[0]))
-    solutions = sorted(solutions, key=lambda st: numere(st.split('<br>',1)[0]))
-
+    GRUPA = str(sys.argv[1]) #numarul grupei
+    p = subprocess.run('python3.7 main.py'.split(),capture_output=True, cwd=os.getcwd() + '/Lab' + str(GRUPA) +'/')
     
+    (_, _, output) = p.stdout.decode('utf-8').partition('### Test SDA ###')
+    (statements, _, solutions) = output.partition('Rezolvari:')
+    (errors,_,statements) = statements.partition('Cerinte:')
+    statements = statements.rstrip() # stergem spatiile de la final
+    solutions = solutions.lstrip().rstrip() # stergem spatiile de la inceput si final
+
+   
     path = "static/"
     folder_var = path + 'variante/'
     folder_sol = path + 'solutii/'
-
+    
+    
+    #Errori
+    with open("import_error"+GRUPA+".txt","a") as f:
+                f.write(str(errors)+"\n");
+                
+                
+    statements = statements.replace('\n','<br>');
+    solutions = solutions.replace('\n','<br>');
     #Cerinte:
     with open(folder_var + 'Lab' + str(sys.argv[1]) + '/' + str(sys.argv[2]) + '.txt', 'w') as f:
-        nr = 0
-        for statement in statements:
-            f.write('<pre id="'+str(nr)+'" onclick="afisare('+str(nr)+')">\n')
-            f.write(statement)
-            f.write('</pre>')
-            nr+=1;
-
+        f.write(statements);
+    
     #print('')
 
     #Rezolvari:
     with open(folder_sol + 'Lab' + str(sys.argv[1]) + '/' + str(sys.argv[2]) + '.txt', 'w') as f:
-        nr = 0
-        for solution in solutions:
-            f.write('<pre id="'+str(nr)+'" onclick="afisare('+str(nr)+')">\n')
-            f.write(solution)
-            f.write('</pre>')
-            nr+=1
-
+        f.write(solutions);

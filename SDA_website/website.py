@@ -87,13 +87,12 @@ def github(GRUPA):
     try:
         os.remove('Lab'+str(GRUPA)+'/problem_test1.py')
         os.remove('Lab'+str(GRUPA)+'/problem_test2.py')
-        os.remove('Lab'+str(GRUPA)+'/main.py')
-        os.remove('Lab'+str(GRUPA)+'/problem.py')
     except Exception as e:
         print(e);
     for module in os.listdir('uploads/'+str(GRUPA)+'/.'):
         if module[-3:] == '.py':
             shutil.copyfile("uploads/"+str(GRUPA)+"/"+module,"Lab"+str(GRUPA)+"/"+module);
+    shutil.copyfile("main_github.py","Lab"+str(GRUPA)+"/main.py")
     return "Okay. <a href='/'>Back</a>"
            
 
@@ -148,8 +147,9 @@ def generare(GRUPA):
             os.remove('import_error'+str(GRUPA)+'.txt')
         except:
             pass;
-        os.system('python3 generare.py '+ str(GRUPA) + ' ' + str(i))
+        os.system('python3.7 generare.py '+ str(GRUPA) + ' ' + str(i))
     return redirect(url_for('grupe'))
     
 if __name__ == "__main__":
-    app.run(debug=True)
+    # ~ app.run(debug=False, host = "0.0.0.0", port=80)
+    app.run(debug=True);

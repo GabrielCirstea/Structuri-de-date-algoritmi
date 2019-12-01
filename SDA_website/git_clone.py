@@ -23,6 +23,7 @@ def github(GRUPA):
     for module in os.listdir('uploads/'+str(GRUPA)+'/.'):
         if module[-3:] == '.py':
             shutil.copyfile("uploads/"+str(GRUPA)+"/"+module,"Lab"+str(GRUPA)+"/"+module);
+	shutil.copyfile("main_github.py","Lab"+str(GRUPA)+"/main.py")
 
 github(211);
 github(212);

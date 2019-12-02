@@ -2,6 +2,7 @@ import os
 import glob
 from problem import Problem
 from shutil import copyfile
+import subprocess
 
 import sys
 
@@ -47,5 +48,5 @@ def Verificare(module,grupa):
     #asta ramane pt cand fac cont pe github
     os.system("cd Lab"+str(grupa)+" && git add "+module);
     os.system('cd Lab'+str(grupa)+' && git commit -m "Added '+module+'"');
-    # os.system('cd Lab'+str(grupa)+' && git push -u origin');
+    os.system('cd Lab'+str(grupa)+' && git push -u origin');
     return "Totul bine";

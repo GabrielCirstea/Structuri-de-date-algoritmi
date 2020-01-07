@@ -29,7 +29,7 @@ if __name__ == '__main__':
         exit();
 
     GRUPA = str(sys.argv[1]) #numarul grupei
-    p = subprocess.run('python3.7 main.py'.split(),capture_output=True, cwd=os.getcwd() + '/Lab' + str(GRUPA) +'/')
+    p = subprocess.run(('python3.7 main.py '+str(sys.argv[2])).split(),capture_output=True, cwd=os.getcwd() + '/Lab' + str(GRUPA) +'/')
     
     (_, _, output) = p.stdout.decode('utf-8').partition('### Test SDA ###')
     (statements, _, solutions) = output.partition('Rezolvari:')

@@ -1,7 +1,9 @@
 import os
+import sys
 import glob
 from problem import Problem
 import timeout_decorator
+import shutil
 
 @timeout_decorator.timeout(2)
 def executare(derived,statements,solutions,errors):
@@ -10,12 +12,37 @@ def executare(derived,statements,solutions,errors):
         statement = str(derived.__name__);
         statement+="\n";
         
+        try:
+            imgNames = []
+            if(getattr(p,"ImgName") !=  AttributeError):
+                for imgName in p.ImgName:       #pt fiecare denumire de imagine
+                    (name,token,extention) = imgName.partition('.');
+                    name+="Var"+str(sys.argv[1]);
+                    imgNames.append(name+token+extention);     # adaugam VarX, X e nr
+                del p.ImgName;
+                p.ImgName = imgNames;
+        except:
+            pass;
+        
         statement += str(p)
         
         solution = str(derived.__name__);
         solution +="\n";
         
         solution += p.solve()
+        
+        try:
+            if(getattr(p,"ImgName") !=  AttributeError):
+                for imgName in p.ImgName:
+                    # get the group number
+                    here = os.getcwd();
+                    grupa = here[-3:]
+                    # adaugam link in fisier
+                    solution+="<img src=\"/static/solutii/Lab"+str(grupa)+"/"+imgName+"\">";
+                    # mutam imaginea in folderul cu rezolvari
+                    shutil.move(imgName,"../static/solutii/Lab"+str(grupa)+"/"+imgName);
+        except:
+            pass;
         
         statements.append(statement)
         solutions.append(solution)

@@ -32,6 +32,7 @@ if __name__ == '__main__':
     p = subprocess.run(('python3.7 main.py '+str(sys.argv[2])).split(),capture_output=True, cwd=os.getcwd() + '/Lab' + str(GRUPA) +'/')
     
     (_, _, output) = p.stdout.decode('utf-8').partition('### Test SDA ###')
+    # os.system("mv Lab/"+str(sys.argv[1])+"/*.png static/solutii/Lab"+str(sys.argv[1])+"/")
     (statements, _, solutions) = output.partition('Rezolvari:')
     (errors,_,statements) = statements.partition('Cerinte:')
     statements = statements.rstrip() # stergem spatiile de la final

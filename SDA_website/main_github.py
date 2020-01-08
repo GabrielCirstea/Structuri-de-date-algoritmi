@@ -11,7 +11,11 @@ def executare(derived,statements,solutions,errors):
         p = derived();
         statement = str(derived.__name__);
         statement+="\n";
-        
+        nrPicturesStatement = 0;
+        try:
+            nrPicturesStatement = p.statementPicture;
+        except:
+            nrPicturesStatement = 0;
         try:
             imgNames = []
             if(getattr(p,"ImgName") !=  AttributeError):
@@ -38,7 +42,11 @@ def executare(derived,statements,solutions,errors):
                     here = os.getcwd();
                     grupa = here[-3:]
                     # adaugam link in fisier
-                    solution+="<img src=\"/static/solutii/Lab"+str(grupa)+"/"+imgName+"\">";
+                    if(nrPicturesStatement > 0):
+                        statement += "<img src=\"/static/solutii/Lab"+str(grupa)+"/"+imgName+"\">";
+                        nrPicturesStatement-=1;
+                    else:
+                        solution+="<img src=\"/static/solutii/Lab"+str(grupa)+"/"+imgName+"\">";
                     # mutam imaginea in folderul cu rezolvari
                     shutil.move(imgName,"../static/solutii/Lab"+str(grupa)+"/"+imgName);
         except:

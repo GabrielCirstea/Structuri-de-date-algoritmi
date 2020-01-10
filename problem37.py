@@ -32,7 +32,7 @@ class Problem37(Problem):
         # data=[];
         self.solution = "";
         # se va alege un camp din heap-ul stocat
-        fIn = open("Hash.b","rb");
+        fIn = open("Hash4.b","rb");
         dict = pickle.load(fIn)
         # ponderi = [('a',28),('r',14),('d',12),('e',20),('n',11),('t',15)];
         # ~ list = ['a','r','d','e','n','t'];
@@ -59,9 +59,9 @@ class Problem37(Problem):
         
         
         # se iau cuvinte si se codifica, unele codificari pot fi modificate pt a fi gresite
-        cVariante = (self.codareHuffman(random.choice(dict[Char])),     # rearendat
-        "01000100110011000010111",                  # neaderent
-        "1011011000010111");                        # arrent
+        cVariante = (self.codareHuffman(random.choice(dict[Char][:-1])),     # rearendat
+        self.wrongCode(self.codareHuffman(random.choice(dict[Char][:-1]))),                  # neaderent
+        self.wrongCode(self.codareHuffman(random.choice(dict[Char][:-1]))) );                        # arrent
         data = (ponderi,bCuvant,bVariante,cVariante);
         statement = "Primiti urmatoarele litere cu ponderi:\n";
         statement += str(ponderi);
@@ -195,14 +195,14 @@ class Problem37(Problem):
             # word = fIn.readline();
             # facem dictionarul cuvantului
             bifat = True;
-            for c in word[:-1]:
+            for c in word[1:-1]:
                 if c not in self.codes:
                     bifat = False;
                     break;
-            if(bifat and word[:-1]!=''):
+            if(bifat and word[1:-1]!=''):
                 # print(word);
                 cuvGasite +=1;
-                cuvinte.append(word[:-1]);
+                cuvinte.append(word[1:-1]);
             n+=1;
         if(len(cuvinte)):
             self.record("Cuvinte gasite:");

@@ -1,9 +1,9 @@
 # generare fisier cu Hash
 import random
 import pickle
-letters = "abcdefghijklmnopqrstuvwxyz";
+letters = "ABCDEFGHIJKLMNOPQRSTUWXYZ";
 dict = {};
-fOut = open("HashTxt.txt","wb");
+fOut = open("Hash4.b","wb");
 def checkWords(list):
     # aven lista de caractere
     characters = {};
@@ -32,9 +32,11 @@ def checkWords(list):
     
 def HashTxt():
     list  = []; # lista de caractere
-    for length in range(4,7):    #cuvinte doar intre 3 si 8 caractere
+    for length in range(4,5):    #cuvinte doar intre 3 si 8 caractere
         list = [j for j in range(0,length)];    # initializam lista
         da = 1;
+        prev = list[0];
+        print(letters[list[0]])
         while(da):
             # for j in range(0,len(list)):
                 # try:
@@ -53,6 +55,9 @@ def HashTxt():
                         da = 0;
                         break;
                     list[k-1] += 1;
+                if(list[0] != prev):
+                    print(letters[list[0]]);
+                    prev = list[0]
             # urmatoarea litera va fi mai mare decat cureta
             for k in range(0,len(list)-1):
                 if(list[k] > list[k+1]):

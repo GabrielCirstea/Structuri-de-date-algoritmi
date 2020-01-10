@@ -21,7 +21,7 @@ def executare(derived,statements,solutions,errors):
             if(getattr(p,"ImgName") !=  AttributeError):
                 for imgName in p.ImgName:       #pt fiecare denumire de imagine
                     (name,token,extention) = imgName.partition('.');
-                    name+="Var"+str(sys.argv[1]);
+                    name+=str(derived.__name__)+"Var"+str(sys.argv[1]);
                     imgNames.append(name+token+extention);     # adaugam VarX, X e nr
                 del p.ImgName;
                 p.ImgName = imgNames;

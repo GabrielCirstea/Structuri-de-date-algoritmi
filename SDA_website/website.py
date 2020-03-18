@@ -144,7 +144,7 @@ def generare(GRUPA):
     #path = os.path.join(os.path.dirname(os.path.abspath(__file__)),'static/')
     
         
-    for i in range(1,101):
+    for i in range(1,10):
         try:
             os.remove('import_error'+str(GRUPA)+'.txt')
         except:

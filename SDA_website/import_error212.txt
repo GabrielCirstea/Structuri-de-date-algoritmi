@@ -1,5 +1,8 @@
 
 Erori:
+Eroare la import modul: problem35.py
+
+
 Eroare la Problem1 can only concatenate str (not "list") to str
 
 

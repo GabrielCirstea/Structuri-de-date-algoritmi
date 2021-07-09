@@ -1,8 +1,10 @@
 # Structiri de date si algoritmi
 
-Repozitor pentru cursul de SDA.<br>  
+Repozitor pentru cursul de SDA.
+
 ## Continut:
-*  tema2/:
+
+* tema2/:
   * Problema de sortare cu algortmul quick-sort folosint partitionarea steagul olandez
 * tema3/:
   * Implementare arborele Huffman pentru codarea si decodarea unor cuvinte
